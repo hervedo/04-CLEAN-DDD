@@ -1,0 +1,21 @@
+import {describe, it, expect} from 'vitest'
+
+import { AnswerQuestionUseCase } from "./answer-question"
+
+
+describe('Answer Question', () => {
+
+it('create an answer', () => {
+  const answerQuestion = new AnswerQuestionUseCase()
+
+  const answer = answerQuestion.execute({
+    questionId: '1',
+    instructorId: '1',
+    content: 'Nova Resposta',
+  })
+
+  expect(answer.content).toEqual('Nova Resposta')
+})
+
+
+})
